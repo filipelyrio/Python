@@ -18,13 +18,13 @@
         {% endif %}
         <div class="mr-2">
             {% if user.is_authenticated %}
-            <a href="#">
+            <a href="{% url 'filme:logout' %}">
                 <button class="bg-red-600 text-white py-1 px-3 rounded-md">
                     Sair 
                 </button>
             </a>
             {% else %}
-            <a href="#">
+            <a href="{% url 'filme:login' %}">
                 <button class="bg-red-600 text-white py-1 px-3 rounded-md">
                     Login 
                 </button>
@@ -33,7 +33,7 @@
         </div>
         {% if user.is_authenticated %}
         <div class="mr-2">
-            <a href="#">
+            <a href="{% url 'filme:editarperfil' request.user.pk %}">
                 <button class="bg-red-600 text-white py-1 px-3 rounded-md">
                     Editar Perfil
                 </button>
